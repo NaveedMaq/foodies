@@ -5,7 +5,6 @@ import classes from "./main-header.module.css";
 import MainHeaderBackground from "./main-header-background";
 
 export default function MainHeader() {
-  console.log("Main header executing");
   return (
     <>
       <MainHeaderBackground />
