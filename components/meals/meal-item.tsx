@@ -2,15 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import classes from "./meal-item.module.css";
-
-export interface Meal {
-  id: string;
-  title: string;
-  slug: string;
-  image: string;
-  summary: string;
-  creator: string;
-}
+import { Meal } from "@/types/commonTypes";
 
 export default function MealItem({
   title,
