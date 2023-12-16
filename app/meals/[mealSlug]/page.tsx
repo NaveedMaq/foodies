@@ -3,6 +3,7 @@ import classes from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { S3_FOOD_IMAGE_BUCKET_URL } from "@/constants/s3.constants";
 
 type MealsDetailsPageProps = {
   params: {
@@ -34,7 +35,11 @@ export default function MealsDetailsPage({ params }: MealsDetailsPageProps) {
     <>
       <header className={classes.header}>
         <div className={classes.image}>
-          <Image src={meal.image} fill alt={meal.title} />
+          <Image
+            src={`${S3_FOOD_IMAGE_BUCKET_URL}/${meal.image}`}
+            fill
+            alt={meal.title}
+          />
         </div>
 
         <div className={classes.headerText}>

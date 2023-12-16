@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 };
 
 async function Meals() {
-  console.log("Fetchnig meals");
   const meals = (await getMeals()) as Meal[];
   return <MealsGrid meals={meals} />;
 }

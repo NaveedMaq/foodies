@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import classes from "./meal-item.module.css";
 import { Meal } from "@/types/commonTypes";
+import { S3_FOOD_IMAGE_BUCKET_URL } from "@/constants/s3.constants";
 
 export default function MealItem({
   title,
@@ -15,7 +16,11 @@ export default function MealItem({
     <article className={classes.meal}>
       <header>
         <div className={classes.image}>
-          <Image src={image} alt={title} fill />
+          <Image
+            src={`${S3_FOOD_IMAGE_BUCKET_URL}/${image}`}
+            alt={title}
+            fill
+          />
         </div>
         <div className={classes.headerText}>
           <h2>{title}</h2>
