@@ -37,3 +37,6 @@ next-env.d.ts
 
 # sqlite database
 meals.db
+
+# uploaded files
+/public/images/uploaded-*
