@@ -2,10 +2,17 @@ import Link from "next/link";
 import classes from "./page.module.css";
 import { Loader, MealsGrid } from "@/components";
 import { getMeals } from "@/lib/meals";
-import { Meal } from "@/components/meals/meal-item";
 import { Suspense } from "react";
+import { Meal } from "@/types/commonTypes";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "All Meals",
+  description: "Browse the delicious meals shared by our vibrant community",
+};
 
 async function Meals() {
+  console.log("Fetchnig meals");
   const meals = (await getMeals()) as Meal[];
   return <MealsGrid meals={meals} />;
 }
